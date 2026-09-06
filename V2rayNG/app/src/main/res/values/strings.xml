@@ -128,6 +128,7 @@
     <string name="server_lab_xhttp_mode">XHTTP Mode</string>
     <string name="server_lab_xhttp_extra">XHTTP Extra raw JSON, format: { XHTTPObject }</string>
     <string name="server_lab_final_mask">finalMask raw JSON, format: { FinalMaskObject }</string>
+    <string name="server_lab_dial_mode" translatable="false">dialMode</string>
     <string name="server_lab_ech_config_list" translatable="false">echConfigList</string>
     <string name="server_lab_verify_peer_cert_by_name">Verify peer certificate by name</string>
     <string name="server_lab_pinned_ca256">Certificate fingerprint (SHA-256)</string>

@@ -128,6 +128,7 @@
     <string name="server_lab_xhttp_mode">XHTTP 模式</string>
     <string name="server_lab_xhttp_extra">XHTTP Extra 原始 JSON，格式： { XHTTPObject }</string>
     <string name="server_lab_final_mask">finalMask 原始 JSON，格式：{ FinalMaskObject }</string>
+    <string name="server_lab_dial_mode" translatable="false">dialMode</string>
     <string name="server_lab_ech_config_list" translatable="false">echConfigList</string>
     <string name="server_lab_verify_peer_cert_by_name">Verify peer cert by name</string>
     <string name="server_lab_pinned_ca256">憑證指紋 (SHA-256)</string>

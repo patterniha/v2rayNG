@@ -128,6 +128,7 @@
     <string name="server_lab_xhttp_mode">Режим XHTTP</string>
     <string name="server_lab_xhttp_extra">Необработанный JSON XHTTP Extra, формат: { XHTTPObject }</string>
     <string name="server_lab_final_mask">Необработанный JSON FinalMask, формат: { FinalMaskObject }</string>
+    <string name="server_lab_dial_mode" translatable="false">dialMode</string>
     <string name="server_lab_ech_config_list" translatable="false">echConfigList</string>
     <string name="server_lab_verify_peer_cert_by_name">Проверять сертификат узла по имени</string>
     <string name="server_lab_pinned_ca256">Отпечаток сертификата (SHA-256)</string>

@@ -33,6 +33,7 @@ object WireguardFmt : FmtBase() {
         config.preSharedKey = queryParam["presharedkey"]?.nullIfBlank()
         config.mtu = Utils.parseInt(queryParam["mtu"] ?: AppConfig.WIREGUARD_LOCAL_MTU)
         config.reserved = queryParam["reserved"] ?: "0,0,0"
+        config.dialMode = queryParam["dialMode"]
 
         return config
     }
@@ -118,6 +119,7 @@ object WireguardFmt : FmtBase() {
         if (config.preSharedKey != null) {
             dicQuery["presharedkey"] = config.preSharedKey.removeWhiteSpace().orEmpty()
         }
+        config.dialMode?.nullIfBlank()?.let { dicQuery["dialMode"] = it }
 
         return toUri(config, config.secretKey, dicQuery)
     }

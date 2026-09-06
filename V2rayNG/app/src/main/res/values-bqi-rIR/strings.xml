@@ -128,6 +128,7 @@
     <string name="server_lab_xhttp_mode">حالت XHTTP</string>
     <string name="server_lab_xhttp_extra">XHTTP Extra خام JSON، قالوو: { XHTTPObject }</string>
     <string name="server_lab_final_mask">finalMask خام JSON، قالوو: { FinalMaskObject }</string>
+    <string name="server_lab_dial_mode" translatable="false">dialMode</string>
     <string name="server_lab_ech_config_list" translatable="false">echConfigList</string>
     <string name="server_lab_verify_peer_cert_by_name">تئیڌ گوواهی هومتا و ری نوم</string>
     <string name="server_lab_pinned_ca256">جا کلک گوواهی (SHA-256)</string>

@@ -49,6 +49,7 @@ class ServerUiState(
     kcpMtu: String = "",
     kcpTti: String = "",
     browserDialerMode: String = "",
+    dialMode: String = "",
     streamSecurity: String = "",
     sni: String = "",
     allowInsecure: Boolean = false,
@@ -98,6 +99,7 @@ class ServerUiState(
     var kcpMtu by mutableStateOf(kcpMtu)
     var kcpTti by mutableStateOf(kcpTti)
     var browserDialerMode by mutableStateOf(browserDialerMode)
+    var dialMode by mutableStateOf(dialMode)
     var streamSecurity by mutableStateOf(streamSecurity)
     var sni by mutableStateOf(sni)
     var allowInsecure by mutableStateOf(allowInsecure)
@@ -167,6 +169,7 @@ class ServerUiState(
             } else {
                 null
             },
+            dialMode = dialMode.nullIfBlank(),
             security = streamSecurity,
             sni = sni,
             insecure = allowInsecure,
@@ -221,6 +224,7 @@ class ServerUiState(
                 kcpMtu = initialConfig.kcpMtu?.toString() ?: "",
                 kcpTti = initialConfig.kcpTti?.toString() ?: "",
                 browserDialerMode = initialConfig.browserDialerMode ?: "",
+                dialMode = initialConfig.dialMode ?: "",
                 streamSecurity = initialConfig.security ?: "",
                 sni = initialConfig.sni ?: "",
                 allowInsecure = initialConfig.insecure == true,

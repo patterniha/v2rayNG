@@ -67,6 +67,7 @@ object Hysteria2Fmt : FmtBase() {
         if (config.pinnedCA256.isNotNullEmpty()) {
             dicQuery["pinSHA256"] = config.pinnedCA256.orEmpty()
         }
+        config.dialMode?.nullIfBlank()?.let { dicQuery["dialMode"] = it }
 
         return toUri(config, config.password, dicQuery)
     }

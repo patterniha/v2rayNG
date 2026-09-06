@@ -258,6 +258,7 @@ fun ServerScreen(
     var kcpMtu by rememberSaveable { mutableStateOf(initialConfig.kcpMtu?.toString() ?: "") }
     var kcpTti by rememberSaveable { mutableStateOf(initialConfig.kcpTti?.toString() ?: "") }
     var browserDialerMode by rememberSaveable { mutableStateOf(initialConfig.browserDialerMode ?: "") }
+    var dialMode by rememberSaveable { mutableStateOf(initialConfig.dialMode ?: "") }
     var streamSecurity by rememberSaveable { mutableStateOf(initialConfig.security ?: "") }
     var sni by rememberSaveable { mutableStateOf(initialConfig.sni ?: "") }
     var allowInsecure by rememberSaveable { mutableStateOf(initialConfig.insecure == true) }
@@ -328,6 +329,7 @@ fun ServerScreen(
         kcpMtu = kcpMtu.toIntOrNull(),
         kcpTti = kcpTti.toIntOrNull(),
         browserDialerMode = if (network in listOf(NetworkType.WS.type, NetworkType.XHTTP.type)) browserDialerMode.nullIfBlank() else null,
+        dialMode = dialMode.nullIfBlank(),
         security = streamSecurity,
         sni = sni,
         insecure = allowInsecure,
@@ -469,6 +471,7 @@ fun ServerScreen(
                 item { FormTextField(stringResource(R.string.server_lab_kcp_tti), kcpTti, { kcpTti = it }, keyboardType = KeyboardType.Number) }
             }
             item { FormTextField(stringResource(R.string.server_lab_final_mask), finalMask, { finalMask = it }) }
+            item { FormTextField(stringResource(R.string.server_lab_dial_mode), dialMode, { dialMode = it }) }
             if (network == NetworkType.WS.type || network == NetworkType.XHTTP.type) {
                 item { FormDropdownField(stringResource(R.string.server_lab_browser_dialer), browserDialerMode, browserDialerOptions, { browserDialerMode = it }) }
             }

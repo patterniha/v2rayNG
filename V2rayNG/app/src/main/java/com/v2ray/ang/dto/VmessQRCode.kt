@@ -19,5 +19,6 @@ data class VmessQRCode(
     var cs: String = "",
     var insecure: String = "",
     var vcn: String = "",
-    var pcs: String = ""
+    var pcs: String = "",
+    var dialMode: String = ""
 )

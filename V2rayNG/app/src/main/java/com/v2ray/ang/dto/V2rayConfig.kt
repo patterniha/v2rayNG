@@ -202,6 +202,7 @@ data class V2rayConfig(
                 var dialerProxy: String? = null,
                 var domainStrategy: String? = null,
                 var happyEyeballs: HappyEyeballsBean? = null,
+                var dialMode: String? = null,
             )
 
             data class HappyEyeballsBean(

@@ -30,6 +30,7 @@ class ServerWireguardActivity : BaseServerActivity() {
         ) {
             CommonBasicFields(uiState)
             WireguardProtocolFields(uiState)
+            CommonDialModeField(uiState)
 
         }
     }

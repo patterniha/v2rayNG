@@ -74,6 +74,8 @@ data class ProfileItem(
     var proxyChainProfiles: String? = null,
 
     var browserDialerMode: String? = null,
+
+    var dialMode: String? = null,
 ) {
 
     companion object {

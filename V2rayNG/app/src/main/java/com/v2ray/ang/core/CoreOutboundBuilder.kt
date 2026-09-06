@@ -36,9 +36,27 @@ object CoreOutboundBuilder {
         }
 
         outbound ?: return null
+        applyDialMode(outbound, profileItem)
         val ret = updateOutboundWithGlobalSettings(outbound)
         if (!ret) return null
         return outbound
+    }
+
+    /**
+     * Copies the profile dialMode into streamSettings.sockopt.dialMode.
+     *
+     * Only the dialMode field is written, so sockopt options set elsewhere
+     * (dialerProxy, domainStrategy, happyEyeballs, ...) are kept.
+     */
+    internal fun applyDialMode(outbound: OutboundBean, profileItem: ProfileItem) {
+        val dialMode = profileItem.dialMode.nullIfBlank() ?: return
+        if (outbound.streamSettings == null) {
+            // wireguard outbounds are built without streamSettings, but Xray still dials
+            // their endpoint through the system dialer with streamSettings.sockopt.
+            // Add one that only carries sockopt: network stays unset as there is no transport.
+            outbound.streamSettings = OutboundBean.StreamSettingsBean(network = null)
+        }
+        outbound.ensureSockopt().dialMode = dialMode
     }
 
     /** Applies global outbound options (mux, protocol-specific tweaks, etc.). */

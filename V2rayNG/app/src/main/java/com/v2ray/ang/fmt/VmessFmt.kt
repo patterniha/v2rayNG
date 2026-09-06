@@ -90,6 +90,7 @@ object VmessFmt : FmtBase() {
         }
         config.verifyPeerCertByName = vmessQRCode.vcn
         config.pinnedCA256 = vmessQRCode.pcs
+        config.dialMode = vmessQRCode.dialMode
 
         return config
     }
@@ -147,6 +148,7 @@ object VmessFmt : FmtBase() {
         }
         vmessQRCode.vcn = config.verifyPeerCertByName.orEmpty()
         vmessQRCode.pcs = config.pinnedCA256.orEmpty()
+        vmessQRCode.dialMode = config.dialMode.orEmpty()
 
         val json = JsonUtil.toJson(vmessQRCode)
         return Utils.encode(json)
